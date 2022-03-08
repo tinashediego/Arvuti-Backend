@@ -3,14 +3,19 @@ package com.tinlee.app.rest.Models;
 import javax.persistence.*;
 
 @Entity
-public class Transaction {
+public class Transaction{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
     private Double amount;
+
+
     @Column
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+
 
 
     public Long getId() {

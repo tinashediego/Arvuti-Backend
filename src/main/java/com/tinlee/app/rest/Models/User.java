@@ -1,10 +1,16 @@
 package com.tinlee.app.rest.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,12 +22,16 @@ public class User {
     private int age;
     @Column
     private String occupation;
+
+
+
     @Column
     private Date date = new Date();
 
     public Long getId(){
         return id;
     }
+
 
     public String getFirstName(){
         return firstName;
