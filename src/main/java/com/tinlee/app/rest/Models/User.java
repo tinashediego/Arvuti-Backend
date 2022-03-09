@@ -20,7 +20,19 @@ public class User {
     private String occupation;
     @Column
     private Date date = new Date();
-   
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "transaction_id")
+
+    private Transaction transaction;
 
     public Long getId(){
         return id;

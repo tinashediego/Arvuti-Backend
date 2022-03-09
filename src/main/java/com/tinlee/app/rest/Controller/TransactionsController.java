@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class Transactions {
+public class TransactionsController {
     @Autowired
 
     private TransactionRepo transactionRepo;

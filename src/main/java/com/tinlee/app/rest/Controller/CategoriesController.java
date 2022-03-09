@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 
-public class Categories {
+public class CategoriesController {
     @Autowired
     private CategoryRepo categoryRepo;
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-public class ApiControllers {
+public class UserController {
     @Autowired
     private UserRepo userRepo;
     @GetMapping(value = "/api/v1/users")
