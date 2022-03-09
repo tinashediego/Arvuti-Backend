@@ -7,15 +7,25 @@ public class Transaction{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "transaction_id")
     private Long id;
     @Column
     private Double amount;
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @OneToOne
+
+    @JoinColumn(name = "user_id")
     @Column
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-
+    private User user;
 
 
     public Long getId() {

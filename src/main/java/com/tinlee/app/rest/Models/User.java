@@ -23,7 +23,19 @@ public class User {
     @Column
     private String occupation;
 
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "transaction_id")
+    @Column
+    private Transaction transaction;
 
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
+    }
 
     @Column
     private Date date = new Date();
