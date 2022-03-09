@@ -1,18 +1,14 @@
 package com.tinlee.app.rest.Models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="user_id")
     private Long id;
     @Column
     private String firstName;
@@ -22,23 +18,9 @@ public class User {
     private int age;
     @Column
     private String occupation;
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "transaction_id")
-    @Column
-    private Transaction transaction;
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
     @Column
     private Date date = new Date();
+   
 
     public Long getId(){
         return id;

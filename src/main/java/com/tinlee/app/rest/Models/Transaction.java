@@ -7,11 +7,14 @@ public class Transaction{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "transaction_id")
     private Long id;
     @Column
     private Double amount;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+
+    private User user;
 
     public User getUser() {
         return user;
@@ -20,13 +23,6 @@ public class Transaction{
     public void setUser(User user) {
         this.user = user;
     }
-
-    @OneToOne
-
-    @JoinColumn(name = "user_id")
-    @Column
-    private User user;
-
 
     public Long getId() {
         return id;
